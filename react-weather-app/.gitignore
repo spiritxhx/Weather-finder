@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+../AngularJS
+../fullstack-course4
+../React
 /.pnp
 .pnp.js
 
