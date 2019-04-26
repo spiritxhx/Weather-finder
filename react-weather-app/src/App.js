@@ -21,15 +21,18 @@ class App extends React.Component {
     const country = e.target.elements.country.value;
     const apiCall = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}`);
     const data = await apiCall.json();
-    console.log(data);
-    this.setState({
-      temperature: (data.main.temp -273.15).toFixed(2), 
-      city: data.name, 
-      country: data.sys.country, 
-      humidity: data.main.humidity, 
-      description: data.weather[0].description, 
-      error: ""
-    });
+    if (city && country)
+      {
+        console.log(data);
+        this.setState({
+          temperature: (data.main.temp -273.15).toFixed(2), 
+          city: data.name, 
+          country: data.sys.country, 
+          humidity: data.main.humidity, 
+          description: data.weather[0].description, 
+          error: ""
+        });
+      }
   }
   render(){
     return (
