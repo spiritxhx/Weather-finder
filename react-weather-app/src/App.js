@@ -23,7 +23,7 @@ class App extends React.Component {
     const data = await apiCall.json();
     console.log(data);
     this.setState({
-      temperature: data.main.temp - 273.15, 
+      temperature: (data.main.temp -273.15).toFixed(2), 
       city: data.name, 
       country: data.sys.country, 
       humidity: data.main.humidity, 
