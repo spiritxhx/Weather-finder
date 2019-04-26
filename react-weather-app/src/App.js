@@ -32,6 +32,15 @@ class App extends React.Component {
           description: data.weather[0].description, 
           error: ""
         });
+      } else {
+        this.setState({
+          // temperature: undefined, 
+          // city: undefined, 
+          // country: undefined, 
+          // humidity: undefined, 
+          // description: undefined, 
+          error: "Please enter the value!"
+        });
       }
   }
   render(){
@@ -45,7 +54,7 @@ class App extends React.Component {
           country = {this.state.country}
           humidity = {this.state.humidity}
           description = {this.state.description}
-          error = {this.error}
+          error = {this.state.error}
         />
       </div>
     );
