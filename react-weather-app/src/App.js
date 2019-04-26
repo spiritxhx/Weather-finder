@@ -9,7 +9,9 @@ const apiKey ='2df8c55703d7bc6faabcf54584e1bd30';
 class App extends React.Component {
   getWeather = async (e) => {
     e.preventDefault();
-    const apiCall = await fetch(`https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?q=London,uk&appid=${apiKey}&units=metrics`);
+    const city = e.target.elements.city.value;
+    const country = e.target.elements.country.value;
+    const apiCall = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}`);
     const data = await apiCall.json();
     console.log(data);
   }
