@@ -4,19 +4,28 @@ export const Weather =(props) => {
     return (
         <div className="weather__info">
             {
-                props.city && props.country && <p>Location: {props.city}, {props.country}</p>
+                props.city && props.country && <p>Location: 
+                <span>{props.city}, {props.country}</span>
+                </p>
             }
             {
-                props.temperature && <p>Temperature: {props.temperature}</p>
+                props.temperature && <p>Temperature: 
+                <span>{props.temperature}</span>
+                </p>
             }
             {
-                props.humidity && <p>Humidity: {props.humidity}</p>
+                props.humidity && <p>Humidity: 
+                <span>{props.humidity}</span>
+                </p>
             }
             {
-                props.description && <p>Conditions: {props.description}</p>
+                props.description && <p>Conditions: 
+                <span>{props.description}</span>
+                </p>
             }
             {
-                props.error && <p>{props.error}</p>
+                props.error && 
+                <span><p>{props.error}</p></span>
             }
         </div>
     );
